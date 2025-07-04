@@ -93,10 +93,31 @@ const useAuth = () => {
   return context;
 };
 
+// Global navigation context
+const NavigationContext = createContext();
+
+const NavigationProvider = ({ children }) => {
+  const [currentView, setCurrentView] = useState('home');
+  
+  return (
+    <NavigationContext.Provider value={{ currentView, setCurrentView }}>
+      {children}
+    </NavigationContext.Provider>
+  );
+};
+
+const useNavigation = () => {
+  const context = useContext(NavigationContext);
+  if (!context) {
+    throw new Error('useNavigation must be used within a NavigationProvider');
+  }
+  return context;
+};
+
 // Components
 const Navbar = () => {
   const { user, logout } = useAuth();
-  const [currentView, setCurrentView] = useState('home');
+  const { currentView, setCurrentView } = useNavigation();
 
   return (
     <nav className="bg-blue-600 text-white p-4">
