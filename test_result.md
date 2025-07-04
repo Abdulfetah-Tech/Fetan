@@ -167,15 +167,18 @@ backend:
 
   - task: "Database Models and CRUD Operations"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented MongoDB models for Users, ServiceProviders, and ServiceRequests with proper UUID-based IDs. All CRUD operations with proper error handling and relationships."
+      - working: true
+        agent: "testing"
+        comment: "Successfully tested all database models and CRUD operations. Create, read, update, and delete operations work correctly for all entities. Error handling is properly implemented for invalid data and non-existent resources. MongoDB connections and data persistence are working correctly."
 
 frontend:
   - task: "User Authentication UI"
