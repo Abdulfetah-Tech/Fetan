@@ -286,8 +286,7 @@ class TestBackendAPI(unittest.TestCase):
 
     def test_14_get_service_providers_by_category(self):
         """Test retrieving service providers filtered by category"""
-        response = requests.get(f"{BACKEND_URL}/service-providers?category={ServiceCategory.PLUMBING}")
-        print(f"Response for test_14: {response.status_code}, {response.text}")
+        response = requests.get(f"{BACKEND_URL}/service-providers?category=plumbing")
         self.assertEqual(response.status_code, 200)
         
         data = response.json()
