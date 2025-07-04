@@ -152,15 +152,18 @@ backend:
 
   - task: "Admin Dashboard API"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Created admin stats endpoint that provides total users, providers, requests, and pending requests count. Restricted to admin role only."
+      - working: true
+        agent: "testing"
+        comment: "Successfully tested admin stats endpoint. The endpoint correctly returns statistics about users, providers, and requests. Access is properly restricted to users with the admin role."
 
   - task: "Database Models and CRUD Operations"
     implemented: true
