@@ -122,15 +122,18 @@ backend:
 
   - task: "Service Provider Profile Management"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Created service provider profile system with business details, categories, experience, portfolio images, certifications, hourly rates, and availability. Includes create and browse endpoints."
+      - working: true
+        agent: "testing"
+        comment: "Successfully tested service provider profile creation, retrieval, and browsing. Category filtering works correctly when using lowercase category names. Profile creation is properly restricted to users with the service_provider role."
 
   - task: "Service Request System"
     implemented: true
