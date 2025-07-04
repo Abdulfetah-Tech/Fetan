@@ -188,7 +188,7 @@ const Navbar = () => {
 
 const HomePage = () => {
   const { user } = useAuth();
-  const [currentView, setCurrentView] = useState('home');
+  const { setCurrentView } = useNavigation();
 
   const services = [
     { name: 'Plumbing', icon: '🔧', image: 'https://images.pexels.com/photos/8486975/pexels-photo-8486975.jpeg' },
