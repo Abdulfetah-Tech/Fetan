@@ -137,15 +137,18 @@ backend:
 
   - task: "Service Request System"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented service request creation and management system. Homeowners can create requests with categories, descriptions, budget, timeline, and images. Service providers can view all requests."
+      - working: true
+        agent: "testing"
+        comment: "Successfully tested service request creation by homeowners and retrieval by different user roles. Homeowners can only see their own requests, while service providers can see all requests. Category filtering works correctly when using lowercase category names. Request creation is properly restricted to users with the homeowner role."
 
   - task: "Admin Dashboard API"
     implemented: true
