@@ -415,8 +415,7 @@ class TestBackendAPI(unittest.TestCase):
     def test_21_get_service_requests_by_category(self):
         """Test retrieving service requests filtered by category"""
         headers = {"Authorization": f"Bearer {self.provider_token}"}
-        response = requests.get(f"{BACKEND_URL}/service-requests?category={ServiceCategory.PLUMBING}", headers=headers)
-        print(f"Response for test_21: {response.status_code}, {response.text}")
+        response = requests.get(f"{BACKEND_URL}/service-requests?category=plumbing", headers=headers)
         self.assertEqual(response.status_code, 200)
         
         data = response.json()
